@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Weather App</title>
+</head>
+<body>
+
+ <img src="./sun.png" style="width: 100px; height: 100px;" id="icon"> 
+
+<div class="container d-flex  flex-column align-items-center ">
+
+    <marquee class="top bg-white rounded  text-center" id="sum-day">Forecast for the day</marquee>
+    <div class="row shadow-lg p-3  rounded d-flex justify-content-center  align-items-center">
+         
+        <div class="top col-sm-4 bg-white rounded text-center" id="temp">
+            Waiting for server to respond...
+        </div>
+        <div class="top col-sm-4 bg-white rounded text-center" id="zone">
+            Waiting for server to respond...
+        </div>
+        <div class="top col-4 bg-white rounded text-center" id="sum" >
+            Waiting for server to respond...
+        </div>
+        <div class="top col-4 bg-white rounded text-center" id="time" >
+                Waiting for server to respond...
+        </div>
+    </div>
+</div>
+<!-- Handlebar template for hourly -->
+
+<div id="hourly-content">Updating...</div>
+<script id="myTemplate-hourly" type="text/x-handlebars-template">
+<p class="weekly-head text-center bg-dark rounded p-2 mt-2 text-white">Hourly weather forecast</p> 
+
+    {{#each data}}
+
+    <div id="hourly-info" class="bg-white d-flex flex-wrap justify-content-around">
+        <p class="hourly-span">{{time}}</p>
+        <p class="hourly-span" id="hourly-temp">{{temperature}}</p>
+        <p class="hourly-span" id="rain">{{precipProbability}}</p> 
+        <p class="hourly-span">{{icon}}</p>
+    </div>
+    {{/each}}
+</script>
+
+<!-- Handlebar template for weeklyforecast-->
+
+<div id="content"></div>
+   <!--Creating the template-->
+   <script id="myTemplate" type="text/x-handlebars-template">
+    <p class="weekly-head text-center bg-dark rounded p-2 mt-2 text-white">Weekly weather forecast</p> 
+
+   <div class="container weekly-data d-flex justify-content-center  flex-wrap shadow-lg rounded p-2">
+    {{#each data}}
+    <div class="card  bg-white m-1" style="max-width: 20rem;">
+        <div class="card-header bg-dark text-white">{{time}}</div>
+        <div class="card-body text-center">
+            <h5 class="card-title"> 
+                <span id="High">{{temperatureHigh}} <small>high</small></span> 
+                <span id="Low">{{temperatureLow}} <small>low</small></span>
+            </h5>
+            <p class="card-text">{{icon}} {{precipProbability}}</p>
+        </div>
+    </div>
+    {{/each}}
+    </div>
+   </script>
+
+
+
+
+
+
+
+
+<div class="fluid-container w-100 p-3 d-flex bg-secondary font-italic rounded  small" id="footer">Updating..</div>
+
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="./style.css">
+
+</body>
+</html>

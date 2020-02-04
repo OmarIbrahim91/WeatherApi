@@ -1,0 +1,87 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+background: url(./clouds.jpeg);
+background-repeat: no-repeat;
+background-size: cover;
+}
+.top{
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 18px 18px 5px 0px rgba(0,0,0,0.75);
+
+}
+.container{
+    margin-top: 10px;
+}
+body{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.card{
+    width: 269px;
+}
+#High{
+    background: red;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 18px 18px 5px 0px rgba(0,0,0,0.75);
+    margin:10px;
+
+    }
+#Low{
+    background: skyblue;
+    padding: 5px;
+    color: black;
+    border-radius: 10px;
+}
+small{
+    font-size: 10px;
+}
+#sum-day{
+    width: 500px;
+}
+.weekly-head{
+    width: inherit;
+    box-shadow: 18px 18px 5px 0px rgba(0,0,0,0.75);
+
+}
+#update{
+    text-align: right;
+    width: 70%;
+}
+#hourly-temp{
+    background: aqua;
+    padding: 5px;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+}
+#rain{
+    background: black;
+    padding: 5px;
+    border-radius: 10px;
+    color:white;
+    text-align: center;
+}
+#hourly-info{
+    padding: 10px;
+    margin-bottom: 2px;
+}
+.hourly-span{
+    padding: 10px;
+    width: 200px;
+    margin-bottom: 0px;
+    margin:10px;
+}
+.card-text{
+    padding-top:10px;
+    margin-top: 10px;
+
+}
